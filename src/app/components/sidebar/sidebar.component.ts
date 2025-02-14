@@ -1,18 +1,27 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss'],
   standalone: true,
-  imports: [RouterModule]
+  imports: [CommonModule, RouterModule],
+  template: `
+    <nav class="sidebar">
+      <ul>
+        <li><a routerLink="/dashboard">Dashboard</a></li>
+        <li><a routerLink="/courses">Courses</a></li>
+        <li><a routerLink="/courses/new">New Course</a></li>
+      </ul>
+    </nav>
+  `,
+  styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent {
-  @Input() menuAbierto = false;
-  @Output() toggleMenu = new EventEmitter<void>();
+export class SidebarComponent {}
 
-  onToggleMenu() {
-    this.toggleMenu.emit();
-  }
-}
+
+
+
+
+
+

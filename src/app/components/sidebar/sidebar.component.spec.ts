@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterModule } from '@angular/router';
+
 import { SidebarComponent } from './sidebar.component';
 
 describe('SidebarComponent', () => {
@@ -8,7 +8,7 @@ describe('SidebarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterModule.forRoot([]), SidebarComponent]
+      imports: [SidebarComponent]
     })
     .compileComponents();
 
@@ -19,13 +19,5 @@ describe('SidebarComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should toggle menu state', () => {
-    expect(component.menuAbierto).toBeFalse();
-    component.toggleMenu.emit();
-    expect(component.menuAbierto).toBeTrue();
-    component.toggleMenu.emit();
-    expect(component.menuAbierto).toBeFalse();
   });
 });
